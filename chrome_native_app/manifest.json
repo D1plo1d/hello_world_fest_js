@@ -1,0 +1,17 @@
+{
+  "name": "Hello World",
+  "description": "Chrome Native App Hello World.",
+  "version": "0.0.0.0",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+        "scripts": ["js/background.js"]
+      }
+  },
+  "requirements": {
+  },
+  "icons": {
+  },
+  "permissions": [
+  ]
+}
