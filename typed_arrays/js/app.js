@@ -27,7 +27,7 @@ function onFileReaderLoad(e) {
 
   vertices = [0, 1, 2].map(function(i) {
     return [0,1,2].map(function(j) {
-      return dataView.getFloat32(80+j+i*3, true)
+      return dataView.getFloat32(80+(j+i*3)*4, true)
     });
   });
 

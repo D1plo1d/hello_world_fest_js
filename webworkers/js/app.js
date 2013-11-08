@@ -1,10 +1,10 @@
-var useWebWorker = true;
+var useWebWorker = false;
 
 // Step 1: Define the webworker's behaviour
 
 // This web worker is going to constantly calculate fibonatchi numbers 
 // in the background and send every 10 millionth one to the main thread.
-workerClosure = function() {
+workerFn = function() {
   var FibNMinus2 = 0;
   var FibNMinus1 = 1;
   var n = 2;
@@ -27,7 +27,7 @@ if (useWebWorker == true)
 
   // Step 2: Create the web worker
 
-  var text = workerClosure.toString()
+  var text = workerFn.toString()
     .replace(/^\s*function\s*\(\) {/, "")
     .replace(/}\s*$/, '');
 
@@ -51,5 +51,5 @@ else
   // running it in the main process. Warning: Chrome may crash.
 
   postMessage = function(msg){console.log(msg);}
-  setTimeout(workerClosure, 0);
+  setTimeout(workerFn, 0);
 }
